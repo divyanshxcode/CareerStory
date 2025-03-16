@@ -6,6 +6,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <div class="container">
@@ -18,94 +19,106 @@
       <form action="/predict" method="post">
         <div class="form-group">
           <label>Age:</label>
-          <input
-            type="range"
-            name="age"
-            min="15"
-            max="25"
-            value="18"
-            class="slider"
-            id="ageSlider"
-          />
-          <span id="ageValue">18</span>
+          <div class="slider-container">
+            <input
+              type="range"
+              name="age"
+              min="15"
+              max="25"
+              value="18"
+              class="slider"
+              id="ageSlider"
+            />
+            <div class="slider-value" id="ageValue">16</div>
+          </div>
         </div>
 
         <div class="form-group">
           <label>Math Skills (1-10):</label>
-          <input
-            type="range"
-            name="math_score"
-            min="1"
-            max="10"
-            value="5"
-            class="slider"
-            id="mathSlider"
-          />
-          <span id="mathValue">5</span>
+          <div class="slider-container">
+            <input
+              type="range"
+              name="math_score"
+              min="1"
+              max="10"
+              value="5"
+              class="slider"
+              id="mathSlider"
+            />
+            <div class="slider-value" id="mathValue">5</div>
+          </div>
         </div>
 
         <div class="form-group">
           <label>Programming Skills (1-10):</label>
-          <input
-            type="range"
-            name="programming_skill"
-            min="1"
-            max="10"
-            value="5"
-            class="slider"
-            id="progSlider"
-          />
-          <span id="progValue">5</span>
+          <div class="slider-container">
+            <input
+              type="range"
+              name="programming_skill"
+              min="1"
+              max="10"
+              value="5"
+              class="slider"
+              id="progSlider"
+            />
+            <div class="slider-value" id="progValue">5</div>
+          </div>
         </div>
 
         <div class="form-group">
           <label>Design Skills (1-10):</label>
-          <input
-            type="range"
-            name="design_skill"
-            min="1"
-            max="10"
-            value="5"
-            class="slider"
-            id="designSlider"
-          />
-          <span id="designValue">5</span>
+          <div class="slider-container">
+            <input
+              type="range"
+              name="design_skill"
+              min="1"
+              max="10"
+              value="5"
+              class="slider"
+              id="designSlider"
+            />
+            <div class="slider-value" id="designValue">5</div>
+          </div>
         </div>
 
         <div class="form-group">
           <label>Communication Skills (1-10):</label>
-          <input
-            type="range"
-            name="communication_skill"
-            min="1"
-            max="10"
-            value="5"
-            class="slider"
-            id="commSlider"
-          />
-          <span id="commValue">5</span>
+          <div class="slider-container">
+            <input
+              type="range"
+              name="communication_skill"
+              min="1"
+              max="10"
+              value="5"
+              class="slider"
+              id="commSlider"
+            />
+            <div class="slider-value" id="commValue">5</div>
+          </div>
         </div>
 
         <div class="form-group">
           <label>Analytical Skills (1-10):</label>
-          <input
-            type="range"
-            name="analytical_skill"
-            min="1"
-            max="10"
-            value="5"
-            class="slider"
-            id="analyticSlider"
-          />
-          <span id="analyticValue">5</span>
+          <div class="slider-container">
+            <input
+              type="range"
+              name="analytical_skill"
+              min="1"
+              max="10"
+              value="5"
+              class="slider"
+              id="analyticSlider"
+            />
+            <div class="slider-value" id="analyticValue">5</div>
+          </div>
         </div>
 
         <div class="form-group">
-          <label>Financial Status:</label>
+          <label>Financial Freedom / Risk Taking Capability:</label>
           <select name="financial_status">
-            <option value="low">Limited resources</option>
-            <option value="medium">Moderate resources</option>
-            <option value="high">Abundant resources</option>
+            <option value="low">Limited</option>
+            <option value="medium">Moderate</option>
+            <option value="high">Abundant</option>
           </select>
         </div>
 
