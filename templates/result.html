@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Career Prediction Results</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container results">
+      <h1>Your Career Recommendations</h1>
+
+      <div class="result-section">
+        <h2>Top Career Matches</h2>
+        <ul class="career-list">
+          {% for career, probability in predictions %}
+          <li>
+            <div class="career-name">{{ career }}</div>
+            <div class="career-match">
+              {{ (probability * 100)|round(1) }}% match
+            </div>
+            <div class="progress-bar">
+              <div
+                class="progress"
+                style="width: {{ (probability * 100)|round(1) }}%"
+              ></div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="result-section">
+        <h2>Job Market Outlook ({{ years_to_workforce }} years from now)</h2>
+        <ul class="market-list">
+          {% for career, outlook in job_market.items() %}
+          <li>
+            <div class="career-name">{{ career }}</div>
+            <div class="market-outlook">{{ outlook }}</div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="result-section">
+        <h2>Education Recommendations</h2>
+        <ul class="edu-list">
+          {% for career, recommendation in education_rec.items() %}
+          <li>
+            <div class="career-name">{{ career }}</div>
+            <div class="edu-rec">{{ recommendation }}</div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <a href="/" class="btn">Try Again</a>
+    </div>
+  </body>
+</html>

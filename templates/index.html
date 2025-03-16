@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Career Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>AI Career Advisor</h1>
+      <p>
+        Rate your skills and interests to get personalized career
+        recommendations
+      </p>
+
+      <form action="/predict" method="post">
+        <div class="form-group">
+          <label>Age:</label>
+          <input
+            type="range"
+            name="age"
+            min="15"
+            max="25"
+            value="18"
+            class="slider"
+            id="ageSlider"
+          />
+          <span id="ageValue">18</span>
+        </div>
+
+        <div class="form-group">
+          <label>Math Skills (1-10):</label>
+          <input
+            type="range"
+            name="math_score"
+            min="1"
+            max="10"
+            value="5"
+            class="slider"
+            id="mathSlider"
+          />
+          <span id="mathValue">5</span>
+        </div>
+
+        <div class="form-group">
+          <label>Programming Skills (1-10):</label>
+          <input
+            type="range"
+            name="programming_skill"
+            min="1"
+            max="10"
+            value="5"
+            class="slider"
+            id="progSlider"
+          />
+          <span id="progValue">5</span>
+        </div>
+
+        <div class="form-group">
+          <label>Design Skills (1-10):</label>
+          <input
+            type="range"
+            name="design_skill"
+            min="1"
+            max="10"
+            value="5"
+            class="slider"
+            id="designSlider"
+          />
+          <span id="designValue">5</span>
+        </div>
+
+        <div class="form-group">
+          <label>Communication Skills (1-10):</label>
+          <input
+            type="range"
+            name="communication_skill"
+            min="1"
+            max="10"
+            value="5"
+            class="slider"
+            id="commSlider"
+          />
+          <span id="commValue">5</span>
+        </div>
+
+        <div class="form-group">
+          <label>Analytical Skills (1-10):</label>
+          <input
+            type="range"
+            name="analytical_skill"
+            min="1"
+            max="10"
+            value="5"
+            class="slider"
+            id="analyticSlider"
+          />
+          <span id="analyticValue">5</span>
+        </div>
+
+        <div class="form-group">
+          <label>Financial Status:</label>
+          <select name="financial_status">
+            <option value="low">Limited resources</option>
+            <option value="medium">Moderate resources</option>
+            <option value="high">Abundant resources</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Predict My Career Path</button>
+      </form>
+    </div>
+
+    <script>
+      // Simple JavaScript to update slider values
+      const sliders = {
+        ageSlider: "ageValue",
+        mathSlider: "mathValue",
+        progSlider: "progValue",
+        designSlider: "designValue",
+        commSlider: "commValue",
+        analyticSlider: "analyticValue",
+      };
+
+      for (const [sliderId, valueId] of Object.entries(sliders)) {
+        const slider = document.getElementById(sliderId);
+        const output = document.getElementById(valueId);
+
+        slider.oninput = function () {
+          output.innerHTML = this.value;
+        };
+      }
+    </script>
+  </body>
+</html>
